@@ -1,11 +1,8 @@
 const Sequelize = require("sequelize");
 
 let db;
-if (process.env.NODE_ENV == "testing") {
-  db = new Sequelize({
-    dialect: "sqlite",
-    storage: __dirname + "/testing.db",
-  });
+if (process.env.DATABASE_URL) {
+  db = new Sequelize(process.env.DATABASE_URL);
 } else {
   db = new Sequelize({
     dialect: "sqlite",

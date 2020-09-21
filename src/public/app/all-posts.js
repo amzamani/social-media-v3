@@ -8,10 +8,10 @@ function loadPosts() {
       //looping through each post
 
       let item = $(`
-                    <div class="col-4">
-                      <div class="card m-2">
+                    <div class="card border-success mb-3" style="max-width: 180rem ; margin : 40px;" >
+                      <div class="card mb-6 card-1 " style="max-width: 1400px; padding: 20px; ">
                         <div class="card-body">
-                          <h5 class="card-title">${p.title}</h5>
+                          <h5 class="card-title ">${p.title}</h5>
                           <h6 class="card-subtitle mb-2 text-muted">${
                             p.user.username
                           }</h6>
@@ -19,9 +19,14 @@ function loadPosts() {
                             ${p.body.substr(0, 200)}
                             <a href="#">...read more</a>
                           </p>
-                          <input type="text" placeholder="add suggestions" class="newComment">
-                          <button class="card-link btnComment">Comment</button>  
-                          <ul class="comment"></ul> 
+                          <input type="text" placeholder="add Comments" class="newComment">
+                          <br>
+                          <br>
+                          <button class="card-link btnComment btn btn-secondary">Comment</button>  
+                          <br>
+                          <br>
+                          <ul class="comment list-group-item" ></ul> 
+                          
                         </div>
                       </div>
                     </div>   

@@ -4,7 +4,7 @@ function loadMyPosts() {
   $.get(`/api/posts?userId=${userId}`, (posts) => {
     for (let p of posts) {
       let item = $(`
-      <div class="col-4">
+      <div class="card border-success mb-3" style="max-width: 180rem ; margin : 40px;">
         <div class="card m-2">
           <div class="card-body">
             <h5 class="card-title">${p.title}</h5>
@@ -14,8 +14,11 @@ function loadMyPosts() {
               <a href="#">...read more</a>
             </p>
             <input type="text" placeholder="add suggestions" class="newComment">
-            <button class="card-link btnComment">Comment</button>  
-            <ul class="comment"></ul> 
+            <br>
+            <br>
+            <button class="card-link btnComment btn btn-secondary">Comment</button>  
+            <br>
+            <ul class="comment list-group-item"></ul> 
           </div>
         </div>
       </div>   
