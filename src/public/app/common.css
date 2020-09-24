@@ -6,7 +6,7 @@
 #footer {
   padding-bottom: 0.5rem;
   padding-top: 0.5rem;
-  position: sticky;
+  /* position: sticky; */
   bottom: 0px;
   background-color: var(--light);
 }

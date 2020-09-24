@@ -3,6 +3,10 @@ function loadPosts() {
     //got posts from api
 
     console.log(posts);
+    // let a = abc[posts];
+
+    let ab;
+    let i = 0;
 
     for (let p of posts) {
       //looping through each post
@@ -15,9 +19,14 @@ function loadPosts() {
                           <h6 class="card-subtitle mb-2 text-muted">${
                             p.user.username
                           }</h6>
-                          <p class="card-text">
+                          <p class="card-text" id="half">
                             ${p.body.substr(0, 200)}
-                            <a href="#">...read more</a>
+                            <a  id = "ab" class = "${i} badge badge-pill badge-light">...read more</a>
+                          </p>
+                          <p class ="card-text" id="full" style="display:none">
+                          ${p.body}
+                          <br>
+                          <br>
                           </p>
                           <input type="text" placeholder="add Comments" class="newComment">
                           <br>
@@ -31,6 +40,16 @@ function loadPosts() {
                       </div>
                     </div>   
                 `);
+
+      i = i+1;
+      item.find("#ab").on("click",()=>{
+        console.log("rclicked");
+        console.log(i);
+        // p.body.substr(0, 1000)
+        item.find("#full").attr('style','display: inline');
+        item.find("#half").attr('style','display: none');
+        
+      })       
       let commentBox = item.find(".comment");
       for (let comment of p.comments) {
         commentBox.append(
@@ -52,6 +71,11 @@ function loadPosts() {
         );
       });
       $("#posts-container").append(item);
-    } //loop ends
+    } 
+    $('#ab').on("click",()=>{
+      console.log("readmore");
+    })
+    //loop ends
+    
   });
 }

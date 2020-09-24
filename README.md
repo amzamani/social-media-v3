@@ -3,6 +3,8 @@
 
 ## Database Setup
 
+## Now using sqlite3 
+
 ```shell
 $ mysql -u root
 ```
@@ -18,6 +20,10 @@ flush privileges;
 ```
 
 ## Project Structure
+
+## todo
+
+1.Prevent user from entering html text
 
 ### Backend (Server)
 ```shell
