@@ -24,6 +24,7 @@ flush privileges;
 ## todo
 
 1.Prevent user from entering html text
+2.edit and delete
 
 ### Backend (Server)
 ```shell

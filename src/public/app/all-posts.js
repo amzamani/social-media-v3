@@ -5,8 +5,14 @@ function loadPosts() {
     console.log(posts);
     // let a = abc[posts];
 
+    console.log(posts.length);
+
+    // console.log(posts.(20));
+
+    console.log(posts.__proto__);
+
     let ab;
-    let i = 0;
+    
 
     for (let p of posts) {
       //looping through each post
@@ -21,7 +27,7 @@ function loadPosts() {
                           }</h6>
                           <p class="card-text" id="half">
                             ${p.body.substr(0, 200)}
-                            <a  id = "ab" class = "${i} badge badge-pill badge-light">...read more</a>
+                            <a  id = "ab" class = " badge badge-pill badge-light">...read more</a>
                           </p>
                           <p class ="card-text" id="full" style="display:none">
                           ${p.body}
@@ -34,17 +40,17 @@ function loadPosts() {
                           <button class="card-link btnComment btn btn-secondary">Comment</button>  
                           <br>
                           <br>
-                          <ul class="comment list-group-item" ></ul> 
+                          <ul class="comment " ></ul> 
                           
                         </div>
                       </div>
                     </div>   
                 `);
 
-      i = i+1;
+      
       item.find("#ab").on("click",()=>{
         console.log("rclicked");
-        console.log(i);
+        
         // p.body.substr(0, 1000)
         item.find("#full").attr('style','display: inline');
         item.find("#half").attr('style','display: none');
@@ -52,7 +58,7 @@ function loadPosts() {
       })       
       let commentBox = item.find(".comment");
       for (let comment of p.comments) {
-        commentBox.append(
+        commentBox.prepend(
           $("<li></li>").text(`[${comment.title}] : ${comment.body}`)
         );
       }
@@ -70,7 +76,7 @@ function loadPosts() {
           }
         );
       });
-      $("#posts-container").append(item);
+      $("#posts-container").prepend(item);
     } 
     $('#ab').on("click",()=>{
       console.log("readmore");

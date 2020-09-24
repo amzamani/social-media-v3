@@ -48,7 +48,7 @@ function loadMyPosts() {
       })
       let commentBox = item.find(".comment");
       for (let comment of p.comments) {
-        commentBox.append(
+        commentBox.prepend(
           $("<li></li>").text(`[${comment.title}] : ${comment.body}`)
         );
       }
@@ -70,7 +70,7 @@ function loadMyPosts() {
         item.find("#list").attr('style', 'display: inline');
 
       });
-      $("#posts-container").append(item);
+      $("#posts-container").prepend(item);
     }
   });
 }
